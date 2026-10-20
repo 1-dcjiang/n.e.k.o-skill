@@ -1,27 +1,20 @@
 # n.e.k.o-skill
 
-N.E.K.O 官方技能包仓库（SKILL.md 技能集合，规划中，尚未填充）。
+N.E.K.O 官方技能包仓库（SKILL.md 技能集合，供 skill_compat 插件加载）。
 
-## 状态
+## 收录的技能包
 
-> ⚠️ **占位仓库**：当前为空，技能包尚未上传。
-> 技能加载能力已由插件 `skill_compat`（Skill 兼容加载器）实现并发布到市场，
-> 本仓库用于存放可供 N.E.K.O 直接加载的官方技能包。
-
-## 计划收录的技能包
-
-| 技能 | 用途 | 状态 |
+| 技能 | 用途 | 配合插件 |
 |---|---|---|
-| 代码沙箱使用指南 | 教 YUI 安全使用 code_sandbox（计算/算法/数据处理） | 规划中 |
-| 卡牌游戏规则库 | 德州扑克/掼蛋/Kards/斗地主规则速查（配合 card_master） | 规划中 |
-| Steam 助手速查 | Steam 管理/游戏助手常用操作（配合 steam_manager） | 规划中 |
-| B站直播协作指南 | 直播观看/弹幕/画面同步协作流程（配合 bili_viewer） | 规划中 |
+| `code-sandbox-guide` | 教 YUI 安全使用代码沙箱：适用场景、代码写法、超时、被拦截原因与替代方案 | code_sandbox |
+| `bili-viewer-coop` | B站协作流程：搜索/详情/感知当前观看/发弹幕纪律与隐私边界 | bili_viewer |
+| `steam-assistant-quickref` | Steam 管理速查：查库/启动/截屏读局/监控/键鼠接管授权纪律 | steam_manager |
 
 ## 技能包格式（SKILL.md）
 
 每个技能包是一个目录，含：
 
-- `SKILL.md`：技能定义（YAML front-matter 含 `name` / `description`，正文为使用说明与示例）。
+- `SKILL.md`：YAML front-matter 含 `name` / `description`，正文为使用说明与示例。
 - 可选的参考文档与脚本资产（`references/`、`scripts/` 等）。
 
 ## 如何加载
@@ -36,6 +29,6 @@ N.E.K.O 官方技能包仓库（SKILL.md 技能集合，规划中，尚未填充
 
 ## 规划
 
-- [ ] 编写首批 4 个技能包 SKILL.md
-- [ ] 本地经 skill_compat 验证可加载
-- [ ] 推送本仓库
+- [x] 首批 3 个技能包（code_sandbox / bili_viewer / steam_manager）
+- [ ] 本地经 skill_compat 验证可加载（见仓库验证脚本）
+- [ ] 补充卡牌游戏规则速查、屏幕阅读器使用指南等更多技能包
