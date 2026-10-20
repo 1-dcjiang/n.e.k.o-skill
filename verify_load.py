@@ -23,11 +23,13 @@ def main():
         return out
 
     out = asyncio.get_event_loop_policy().new_event_loop().run_until_complete(run())
+    # list_skills 返回 Ok 包装（v0.1.26 后的 sdk 返回风格），解包 value
+    data = out.value if hasattr(out, "value") else out
     print("scan_status:", p._scan_status)
-    for s in out["skills"]:
+    for s in data["skills"]:
         print(f"  - {s['name']}: {s['description'][:60]}")
-    assert out["count"] >= 3, f"预期 ≥3 个技能，实际 {out['count']}"
-    print(f"[OK] {out['count']} skills loadable")
+    assert data["count"] >= 3, f"预期 ≥3 个技能，实际 {data['count']}"
+    print(f"[OK] {data['count']} skills loadable")
 
 
 if __name__ == "__main__":
